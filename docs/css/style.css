@@ -151,6 +151,8 @@ ul li {
 
 img {
   vertical-align: top;
+  display: block;
+  width: 100%;
 }
 
 h1,
@@ -750,7 +752,7 @@ body {
   }
 
   .menu__item {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
   }
 
   .menu__item:last-child {
