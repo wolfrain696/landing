@@ -1,0 +1,131 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+@import "fonts";
+@import 'icons';
+
+//*******************************************************************************************
+
+$fontSize: 16;
+$fontFamily: 'Heebo';
+$mainColor: #21243D;
+
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 870;
+$md1: $maxWidthContainer + 12;
+$md2: 992; 
+$md3: 767; 
+$md4: 992; 
+
+
+
+//обнуление, общие параметры
+
+@import 'null';
+
+body{
+  font-family: $fontFamily;
+  color: $mainColor;
+  font-size: $fontSize;
+}
+
+._container{
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 12px;
+  @media (max-width:$md1 + px) {
+      max-width: 970px;
+  }
+  @media (max-width:$md2 + px) {
+    max-width: 750px;
+}
+  @media (max-width:$md3 + px) {
+    max-width: none;
+    padding: 0 10px;
+}
+}
+._ibg{
+  position: relative;
+  img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+  }
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  height: 47px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29 / 20 * 100%;
+  background-color: #FF6464;
+  color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease 0s;
+  @media (min-width: $md4 + px) {
+    &:hover{
+      background-color: #dd3b3b;
+
+    }
+  }
+}
+.title{
+  font-size: 44px;
+  line-height: 60 / 44 * 100%;
+  @media (max-width: $md3 + px) {
+    font-size: 30px;
+  }
+
+}
+.text{
+  line-height: 23 / $fontSize * 100%; 
+}
+.page{
+  padding: 90px 0 0 0;
+  flex: 1 1 auto;
+  @media (max-width: $md3 + px){
+    padding: 30px 0 0 0;
+  }
+}
+.title-posts{
+  font-size: 22px;
+  font-weight: 400;
+  @media (max-width: $md3 + px){
+  }
+}
+.social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__item{
+    margin: 0 17px;
+    font-size: 30px;
+    color: inherit;
+    @media (min-width: $md3 + px) {
+        &:hover{
+            color: #ff6464;
+        } 
+    }
+  }
+  
+}
+//импорт стилей
+@import '_header';
+@import '_home';
+@import '_works';
+@import '_footer';
+

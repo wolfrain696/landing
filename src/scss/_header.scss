@@ -1,0 +1,112 @@
+.header {
+    position: relative;
+    z-index: 100    ;
+    &__content{
+        max-width: 1044px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+    &__menu{
+        padding: 10px 0;
+        height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+.menu{
+    &__icon{}
+    &__body{
+
+        @media (max-width: $md3 + px) {
+            transform: translate(0, -100%);
+            transition: all 0.8s;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: auto;
+            padding: 70px 10px 30px 10px;
+            background-color: rgba(255, 255, 255,0.9);
+            &._active{
+                transform: translate(0,0);
+            }
+
+        }
+    }
+    &__list{
+        @media (max-width: $md3 + px){
+            height: 50px;
+        }
+        @media (min-width: $md3 + px) {
+            display: flex;
+        }
+    }
+    &__item{
+        margin-left: 33px;
+        @media (max-width: $md3 + px ) {
+            margin: 0 0 10px 0;
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+    &__link{
+        font-size: 20px;
+        font-weight: 500;
+        transition: all 0.3s ease 0s;
+        @media (min-width: $md2 + px) {
+            &:hover{
+                color: #FF6464;
+            }
+        }
+        @media (max-width: $md3 + px) {
+            font-size: 40px;
+            text-align: center;
+            display: block;
+        }
+    }
+}
+
+.icon-menu{
+    display: none;
+    @media (max-width: $md3 + px) {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 5;
+        span{
+            transition: all 0.3s ease 0s;
+            top: calc(50% - 1px);
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            &:first-child{
+                top: 0;
+            }
+            &:last-child{
+                top: auto;
+                bottom: 0;
+            }
+        }
+        &._active{
+            span{
+                transform:  scale(0);
+                &:first-child{
+                    transform: rotate(-45deg);
+                    top: calc(50% - 1px);
+                }
+                &:last-child{
+                    transform: rotate(45deg);
+                    top: calc(50% - 1px);
+                }
+            }
+        }
+    }
+}
