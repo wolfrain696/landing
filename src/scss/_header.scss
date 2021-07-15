@@ -57,6 +57,9 @@
         font-size: 20px;
         font-weight: 500;
         transition: all 0.3s ease 0s;
+        &._active{
+            color: #FF6464;
+        }
         @media (min-width: $md2 + px) {
             &:hover{
                 color: #FF6464;

@@ -32,11 +32,27 @@ $md4: 992;
 @import 'null';
 
 body{
+
   font-family: $fontFamily;
   color: $mainColor;
   font-size: $fontSize;
 }
 
+.wrapper{
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  &._loaded{}
+}
+.page{
+  padding: 90px 0 0 0;
+  flex: 1 1 auto;
+  @media (max-width: $md3 + px) {
+    padding: 30px 0 0 0;
+  }
+}
 ._container{
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
@@ -52,6 +68,7 @@ body{
     padding: 0 10px;
 }
 }
+
 ._ibg{
   position: relative;
   img{
@@ -85,6 +102,7 @@ body{
 }
 .title{
   font-size: 44px;
+  font-weight: 700;
   line-height: 60 / 44 * 100%;
   @media (max-width: $md3 + px) {
     font-size: 30px;
@@ -93,13 +111,6 @@ body{
 }
 .text{
   line-height: 23 / $fontSize * 100%; 
-}
-.page{
-  padding: 90px 0 0 0;
-  flex: 1 1 auto;
-  @media (max-width: $md3 + px){
-    padding: 30px 0 0 0;
-  }
 }
 .title-posts{
   font-size: 22px;
@@ -128,4 +139,5 @@ body{
 @import '_home';
 @import '_works';
 @import '_footer';
+@import "_blog";
 
