@@ -1,6 +1,12 @@
 
 .works{
-   
+    
+    &__items{
+        padding-bottom: 60px;
+    @media (max-width: $md3 + px) {
+        padding-bottom: 30px;
+    }
+    }
     &__body{
         flex: 1 1 auto;
         @media (min-width: $md3 + px){
@@ -24,9 +30,9 @@
         }
     }
     &__info{
-        display: inline-flex;
+        display: flex;
         align-items: center;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
 
     }
     &__item{
@@ -41,15 +47,23 @@
             align-items: flex-start;
         }
       }
-    &__text{}
+    &__text{
+        max-width: 415px;
+    }
     &__title{ 
         color: inherit;
         font-size: 30px;
         line-height: 44/30 *100%;
         font-weight: 700;
         margin-bottom: 15px;
+        transition: color 0.3s ease 0s;
         @media (max-width: $md3 + px){
             font-size: 24px;
+        }
+        @media (min-width: $md3 + px) {
+            &:hover{
+                color: #ff6464;
+            }
         }
     }
     &__year{
@@ -64,5 +78,12 @@
         background-color:#142850;
         border-radius: 16px;
 
+    }
+}
+
+.works__main-title{
+    margin-bottom: 25px;
+    @media (max-width: $md3 + px) {
+        margin-bottom: 13px;
     }
 }
